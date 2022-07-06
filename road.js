@@ -45,7 +45,7 @@ class Road{
                 context.stroke();
         }
         context.setLineDash([5,3])
-        this.borders.forEach(border =>{ //!fix den her del
+        this.borders.forEach(border =>{
             context.beginPath();
             context.moveTo(border[1].x, border[1].y);
             context.lineTo(border[0].x, border[0].y);

@@ -12,11 +12,13 @@ class Car{
         this.angle = 0;
         this.ANGLE = this.ACCELERATION/10;
 
+        this.sensor = new RaySensor(this);
         this.controls = new Controls();
     }
 
-    Update(){
+    Update(roadBoarders){
         this.#Move();
+        this.sensor.Update(roadBoarders);
     }
 
     #Move(){
@@ -65,5 +67,7 @@ class Car{
         )
         context.fill()
         context.restore();
+
+        this.sensor.Draw(context);
     }
 }
