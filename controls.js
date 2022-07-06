@@ -1,11 +1,18 @@
 class Controls{
-    constructor(){
+    constructor(type){
         this.forward = false;
         this.left = false;
         this.backward = false;
         this.right = false;
 
-        this.#KeyHandler();
+        switch(type) {
+            case "USER":
+                this.#KeyHandler();
+                break;
+            case "DUMMY":
+                this.forward = true;
+                break;
+        }
     }
 
     #KeyHandler(){

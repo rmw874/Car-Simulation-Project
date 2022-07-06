@@ -21,3 +21,20 @@ function getIntersection(A,B,C,D){
 
     return null;
 }
+
+function CollisionDetection(poly1, poly2){
+    for (let i = 0; i < poly1.length; i++){
+        for (let j = 0; j < poly2.length; j++){
+            const collisions = getIntersection(
+                poly1[1],
+                poly1[(i+1)%poly1.length],
+                poly2[1],
+                poly2[(j+1)%poly2.length]
+            )
+            if (collisions){
+                return true;
+            }
+        }
+    }
+    return false;
+}
